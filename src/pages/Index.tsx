@@ -315,7 +315,7 @@ const Index = () => {
         <div className="container relative z-10">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
             {/* Left: Headline & Actions */}
-            <div className="flex flex-col gap-8 text-center lg:text-left">
+            <div className="flex flex-col gap-8 text-center lg:text-left mb-12 lg:mb-0">
               <div className="flex flex-col items-center gap-6 lg:items-start">
                 {/* Hero section top badges */}
                 <div className="mb-4 flex items-center">
@@ -365,62 +365,70 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right: Featured Bonus Card */}
-            <div className="relative">
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white/50"></div>
-              <div className="glassmorphism relative p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div className="absolute -right-4 -top-4 z-20">
-                  <div className="animate-bounce rounded-full bg-gokkerz-green px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white shadow-lg">
-                    Beste Bonus 2025
-                  </div>
+            {/* Right: Animated Casino Logos */}
+            <div className="relative overflow-hidden px-8 py-6">
+              <div className="flex flex-col gap-6">
+                {/* Top Row - Moving Right */}
+                <div className="animate-scroll-right flex gap-8">
+                  {[
+                    'toto', 'holland casino', 'betcity', 
+                    'kansino', 'circus', 'jacks casino',
+                    'bingoal', 'unibet', 'bet mgm'
+                  ].map((logo) => (
+                    <div 
+                      key={logo}
+                      className="group flex-none w-28 aspect-square transform transition-all duration-300 hover:-translate-y-0.5"
+                    >
+                      <img
+                        src={`/casinologos/casilogos/${logo}.svg`}
+                        alt={logo}
+                        className="h-full w-full rounded-2xl bg-white/[0.02] object-contain p-2.5 shadow-[0_4px_12px_rgb(0,0,0,0.03)] transition-all duration-300 group-hover:shadow-[0_6px_20px_rgb(0,0,0,0.08)]"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
                 </div>
 
-                <div className="flex flex-col items-center text-center">
-                  <img
-                    src="/casinologos/casilogos/kansino.svg"
-                    alt="Kansino"
-                    className="floating-animation mb-4 h-28 w-auto rounded-[10%]"
-                  />
-                  <div className="mb-4 inline-block rounded-full bg-gokkerz-green/10 px-4 py-2 font-semibold text-gokkerz-green">
-                    No Deposit Bonus
-                  </div>
-                  <p className="mb-2 text-4xl font-bold text-gokkerz-green">€25 Gratis</p>
-                  <p className="mb-4 text-gray-600">Geen storting nodig</p>
+                {/* Middle Row - Moving Left */}
+                <div className="animate-scroll-left flex gap-8">
+                  {[
+                    'ggpoker', 'leovegas', 'lucky 7 casino',
+                    'one casino', '777', '711',
+                    '365', 'fairplay casino', 'comeon'
+                  ].map((logo) => (
+                    <div 
+                      key={logo}
+                      className="group flex-none w-28 aspect-square transform transition-all duration-300 hover:-translate-y-0.5"
+                    >
+                      <img
+                        src={`/casinologos/casilogos/${logo}.svg`}
+                        alt={logo}
+                        className="h-full w-full rounded-2xl bg-white/[0.02] object-contain p-2.5 shadow-[0_4px_12px_rgb(0,0,0,0.03)] transition-all duration-300 group-hover:shadow-[0_6px_20px_rgb(0,0,0,0.08)]"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
 
-                  <ul className="mb-6 w-full space-y-3">
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Check className="h-5 w-5 text-gokkerz-green" />
-                      Nederlandse licentie
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Check className="h-5 w-5 text-gokkerz-green" />
-                      Binnen 5 minuten spelen
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Check className="h-5 w-5 text-gokkerz-green" />
-                      2000+ spelaanbod
-                    </li>
-                  </ul>
-
-                  <div className="flex w-full flex-col gap-3">
-                    <Button className="button-pulse w-full bg-green-gradient py-6 text-base font-semibold shadow-md hover:opacity-90" asChild>
-                      <a
-                        href={getCasinoUrl('Kansino')}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <span className="flex items-center justify-center gap-2">
-                          Claim €25 Bonus
-                        </span>
-                      </a>
-                    </Button>
-                    <Button variant="outline" className="w-full" asChild>
-                      <Link to="/casino/kansino" className="flex items-center justify-center gap-2">
-                        Lees Review
-                        <Info className="h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
+                {/* Bottom Row - Moving Right */}
+                <div className="animate-scroll-right flex gap-8">
+                  {[
+                    'vbet', 'winnit', 'ze bet',
+                    'tonybet', 'scori pro', 'goldrun casino',
+                    'hardrock casino', 'hommerson', 'betnation'
+                  ].map((logo) => (
+                    <div 
+                      key={logo}
+                      className="group flex-none w-28 aspect-square transform transition-all duration-300 hover:-translate-y-0.5"
+                    >
+                      <img
+                        src={`/casinologos/casilogos/${logo}.svg`}
+                        alt={logo}
+                        className="h-full w-full rounded-2xl bg-white/[0.02] object-contain p-2.5 shadow-[0_4px_12px_rgb(0,0,0,0.03)] transition-all duration-300 group-hover:shadow-[0_6px_20px_rgb(0,0,0,0.08)]"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
